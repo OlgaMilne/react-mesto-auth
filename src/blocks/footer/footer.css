@@ -3,7 +3,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 auto 56px;
+  margin: 30px auto 56px;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
