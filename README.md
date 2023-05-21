@@ -30,4 +30,4 @@
 
 #### Ссылка на сайт проекта
 
-https://olgamilne.github.io/mesto-react-auth/
+https://olgamilne.github.io/react-mesto-auth/
