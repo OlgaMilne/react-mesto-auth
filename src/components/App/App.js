@@ -36,22 +36,15 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    api.getInitialCards()
-      .then((cardsData) => {
-        setCards(cardsData);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }, []);
-
-  useEffect(function () {
-    api.getUserProfile()
-      .then((userData) => { setCurrentUser(userData); })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  Promise.all([ api.getUserProfile(), api.getInitialCards() ])
+  .then(( [ userData, cardsData ] ) =>{
+    setCurrentUser(userData);
+    setCards(cardsData);
+  })
+  .catch(err => {
+    console.log(err);
+  });
+}, []);
 
   useEffect(function () {
     const userToken = localStorage.getItem('token');
